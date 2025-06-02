@@ -6,9 +6,6 @@ class Solution:
             result = (result << 1) | bit
             n >>= 1
         return result
-sol = Solution()
-print(sol.reverseBits(110011) == 110011)
-print(sol.reverseBits(111011) == 110111)
 
 
 
