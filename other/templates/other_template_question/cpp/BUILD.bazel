@@ -1,0 +1,25 @@
+load("@rules_cc//cc:defs.bzl", "cc_binary", "cc_library", "cc_test")
+
+cc_library(
+    name = "solution_lib",
+    srcs = ["solution.cc"],
+    hdrs = ["solution.h"],
+    copts = ["-std=c++17"],
+    defines = ["ALGO_TEST"],
+)
+
+cc_binary(
+    name = "run",
+    srcs = [
+        "solution.cc",
+        "solution.h",
+    ],
+    copts = ["-std=c++17"],
+)
+
+cc_test(
+    name = "test",
+    srcs = ["solution_test.cc"],
+    copts = ["-std=c++17"],
+    deps = [":solution_lib"],
+)

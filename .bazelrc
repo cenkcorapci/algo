@@ -1,0 +1,5 @@
+build --keep_going
+build --color=yes
+
+test --test_output=errors
+
