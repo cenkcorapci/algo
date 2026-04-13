@@ -6,10 +6,11 @@ BAZEL := $(shell command -v bazel >/dev/null 2>&1 && echo bazel || (command -v b
 guard-bazel:
 	@test -n "$(BAZEL)" || (echo "Install bazel (or bazelisk) to run this project." && exit 1)
 
+
 help:
 	@echo "Usage:"
-	@echo "  make run LANG=<python|go|cpp> QUESTION=<question-or-platform/collection/question>"
-	@echo "  make test LANG=<python|go|cpp> QUESTION=<question-or-platform/collection/question>"
+ 	@echo "  make run LANG=<python|go|cpp|scala|rust|javascript> QUESTION=<question-or-platform/collection/question>"
+ 	@echo "  make test LANG=<python|go|cpp|scala|rust|javascript> QUESTION=<question-or-platform/collection/question>"
 	@echo "  make test-all"
 
 run: guard-bazel

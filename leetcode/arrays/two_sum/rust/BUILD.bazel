@@ -1,0 +1,21 @@
+load("@rules_rust//rust:defs.bzl", "rust_binary", "rust_test", "rust_library")
+
+rust_library(
+    name = "lib",
+    srcs = ["lib.rs"],
+    crate_root = "lib.rs",
+    visibility = ["//visibility:private"],
+)
+
+rust_binary(
+    name = "run",
+    srcs = ["main.rs"],
+    deps = [":lib"],
+)
+
+rust_test(
+    name = "test",
+    srcs = ["lib.rs", "tests.rs"],
+    deps = [":lib"],
+)
+

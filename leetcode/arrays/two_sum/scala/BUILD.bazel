@@ -1,0 +1,20 @@
+load("@rules_scala//scala:scala.bzl", "scala_library", "scala_binary", "scala_test")
+
+scala_library(
+    name = "lib",
+    srcs = ["Solution.scala"],
+    visibility = ["//visibility:private"],
+)
+
+scala_binary(
+    name = "run",
+    deps = [":lib"],
+    main_class = "SolutionMain",
+)
+
+scala_test(
+    name = "test",
+    srcs = ["SolutionTest.scala"],
+    deps = [":lib"],
+)
+

@@ -8,6 +8,10 @@ LANG_DIR = {
     "python": "python",
     "go": "go",
     "cpp": "cpp",
+    "scala": "scala",
+    "rust": "rust",
+    "javascript": "js",
+    "js": "js",
 }
 
 

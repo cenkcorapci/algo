@@ -1,6 +1,6 @@
 # algo
 
-Algorithms workspace powered by Bazel for `cpp`, `go`, and `python`.
+Algorithms workspace powered by Bazel for `cpp`, `go`, `python`, `scala`, and `rust`.
 
 This repo now follows a consistent question layout:
 
