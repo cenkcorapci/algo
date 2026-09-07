@@ -1,0 +1,8 @@
+#ifndef BLIND_75_CPP_VALID_PARENTHESES_SOLUTION_H_
+#define BLIND_75_CPP_VALID_PARENTHESES_SOLUTION_H_
+
+#include <string>
+
+bool Solve(const std::string& s);
+
+#endif  // BLIND_75_CPP_VALID_PARENTHESES_SOLUTION_H_
