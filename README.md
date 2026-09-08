@@ -35,6 +35,15 @@ Requires `bazel` (or `bazelisk`) and `python3` on your `PATH`. JavaScript target
 
 ## Make commands
 
+Create a new question from the platform templates (copies every available language unless `LANGS` is set):
+
+```bash
+make new DIR=leetcode/arrays NAME=product_except_self
+make new DIR=hackerrank/warmup NAME=simple_array_sum LANGS="python go"
+```
+
+`DIR` is `<platform>/<collection>` (`leetcode`, `hackerrank`, or `other`). `NAME` is the snake_case question slug. This also writes a stub `README.md` under the new question folder.
+
 Run one solution (language + question only):
 
 ```bash
@@ -87,7 +96,7 @@ Template question skeletons exist in each platform and language:
 - `hackerrank/templates/hr_template_question/{python,go,cpp}`
 - `other/templates/other_template_question/{python,go,cpp}`
 
-Copy one of these directories to start a new question quickly.
+Prefer `make new` over copying by hand — it rewrites Go `importpath`, Rust crate names, and C++ include guards for the new path.
 
 ## Questions
 
