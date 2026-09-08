@@ -1,5 +1,9 @@
 # algo
 
+[![Build](https://github.com/cenkcorapci/algo/actions/workflows/build.yml/badge.svg)](https://github.com/cenkcorapci/algo/actions/workflows/build.yml)
+[![Test](https://github.com/cenkcorapci/algo/actions/workflows/test.yml/badge.svg)](https://github.com/cenkcorapci/algo/actions/workflows/test.yml)
+[![Coverage](https://codecov.io/gh/cenkcorapci/algo/graph/badge.svg)](https://codecov.io/gh/cenkcorapci/algo)
+
 Algorithms workspace powered by Bazel for `cpp`, `go`, `python`, `scala`, `rust`, and `javascript`.
 
 This repo follows a consistent question layout:

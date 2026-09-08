@@ -1,0 +1,31 @@
+name: Coverage
+
+on:
+  push:
+    branches:
+      - "**"
+  pull_request:
+
+jobs:
+  coverage:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Bazelisk
+        uses: bazelbuild/setup-bazelisk@v3
+
+      - name: Run coverage
+        run: bazelisk coverage //... --combined_report=lcov
+
+      - name: Prepare lcov report
+        run: |
+          mkdir -p coverage
+          cp "$(bazelisk info output_path)/_coverage/_coverage_report.dat" coverage/lcov.info
+
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v5
+        with:
+          files: coverage/lcov.info
+          fail_ci_if_error: false
