@@ -1,4 +1,4 @@
-pt iload("@rules_scala//scala:scala.bzl", "scala_library", "scala_binary", "scala_test")
+load("@rules_scala//scala:scala.bzl", "scala_library", "scala_binary", "scala_test")
 
 scala_library(
     name = "lib",

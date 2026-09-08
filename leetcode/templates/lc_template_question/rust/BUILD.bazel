@@ -15,7 +15,5 @@ rust_binary(
 
 rust_test(
     name = "test",
-    srcs = ["lib.rs", "tests.rs"],
-    deps = [":lib"],
+    crate = ":lib",
 )
-

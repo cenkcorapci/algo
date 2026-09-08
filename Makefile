@@ -9,8 +9,8 @@ guard-bazel:
 
 help:
 	@echo "Usage:"
- 	@echo "  make run LANG=<python|go|cpp|scala|rust|javascript> QUESTION=<question-or-platform/collection/question>"
- 	@echo "  make test LANG=<python|go|cpp|scala|rust|javascript> QUESTION=<question-or-platform/collection/question>"
+	@echo "  make run LANG=<python|go|cpp|scala|rust|javascript> QUESTION=<question-or-platform/collection/question>"
+	@echo "  make test LANG=<python|go|cpp|scala|rust|javascript> QUESTION=<question-or-platform/collection/question>"
 	@echo "  make test-all"
 
 run: guard-bazel
@@ -25,4 +25,3 @@ test: guard-bazel
 
 test-all: guard-bazel
 	@$(BAZEL) test //...
-

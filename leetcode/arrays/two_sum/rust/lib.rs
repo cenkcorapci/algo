@@ -1,4 +1,4 @@
-pppub fn solve(nums: &[i32], target: i32) -> Vec<usize> {
+pub fn solve(nums: &[i32], target: i32) -> Vec<usize> {
     use std::collections::HashMap;
     let mut seen: HashMap<i32, usize> = HashMap::new();
     for (i, &v) in nums.iter().enumerate() {
