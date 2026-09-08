@@ -1,48 +1,18 @@
-Palindromic Substrings (LeetCode)
-================================
+# Palindromic Substrings (LeetCode 647)
 
-This directory contains a C++ template for the LeetCode problem "Palindromic Substrings".
+Given a string `s`, return the number of palindromic substrings in it. A substring is contiguous; single characters count as palindromes.
 
-## Description
+## Approach
 
-Given a string s, return the number of palindromic substrings in it.
+Expand around centers: for each index, count odd-length palindromes centered at that index and even-length ones centered between `i` and `i + 1`. Each expansion that stays a palindrome adds one to the answer.
 
-A string is a palindrome when it reads the same backward as forward.
+Time `O(n²)`, space `O(1)`.
 
-A substring is a contiguous sequence of characters within the string.
+## Languages
 
-
-
-Example 1:
-
-Input: s = "abc"
-Output: 3
-Explanation: Three palindromic strings: "a", "b", "c".
-
-Example 2:
-
-Input: s = "aaa"
-Output: 6
-Explanation: Six palindromic strings: "a", "a", "a", "aa", "aa", "aaa".
-
-
-
-Constraints:
-
-    1 <= s.length <= 1000
-    s consists of lowercase English letters.
-
-
-
-```bash
-bazel run //leetcode/strings/palindromic_substrings/cpp:run
-```
-
-Run tests:
+Currently `cpp` (Bazel) and a `rust` Cargo sketch.
 
 ```bash
 bazel test //leetcode/strings/palindromic_substrings/cpp:test
+bazel run //leetcode/strings/palindromic_substrings/cpp:run
 ```
-
-This is a template only; implement the algorithm in `solution.cc` and extend tests in `solution_test.cc`.
-
