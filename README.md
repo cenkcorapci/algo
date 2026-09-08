@@ -67,6 +67,18 @@ Test everything:
 make test-all
 ```
 
+## CI/CD
+
+GitHub Actions workflows under `.github/workflows/`:
+
+| Workflow | What it runs |
+| --- | --- |
+| `build.yml` | `bazelisk build //...` |
+| `test.yml` | `bazelisk test //...` |
+| `coverage.yml` | `bazelisk coverage //...` and uploads LCOV to Codecov |
+
+Every question package with a `BUILD.bazel` is included automatically; no path filters.
+
 ## Templates
 
 Template question skeletons exist in each platform and language:
@@ -77,16 +89,19 @@ Template question skeletons exist in each platform and language:
 
 Copy one of these directories to start a new question quickly.
 
-## Current sample question
+## Questions
+
+Sample multi-language question:
 
 - `leetcode/arrays/two_sum/{python,go,cpp,scala,rust,js}`
 
-Each language includes:
+Migrated Blind 75 solutions (each language has `solution.*`, tests, and `BUILD.bazel` with `:run` / `:test`):
 
-- `solution.*`
-- language-specific unit test file
-- `BUILD.bazel`
+- `leetcode/stacks/valid_parentheses/{python,go,cpp,scala,rust,js}`
+- `leetcode/linked_lists/merge_two_sorted_lists/{python,go,cpp,scala,rust,js}`
+- `leetcode/bit_manipulation/reverse_bits/{python,go,cpp,scala,rust,js}`
+- `leetcode/dynamic_programming/combination_sum4/{python,go,cpp,scala,rust,js}`
 
-## Notes
+Also present:
 
-- Existing legacy content under `blind-75/` is kept as-is and can be migrated gradually into the new structure.
+- `leetcode/strings/palindromic_substrings/{cpp,rust}`

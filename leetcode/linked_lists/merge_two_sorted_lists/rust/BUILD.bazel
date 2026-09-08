@@ -1,7 +1,7 @@
 load("@rules_rust//rust:defs.bzl", "rust_binary", "rust_library", "rust_test")
 
 rust_library(
-    name = "two_sum",
+    name = "merge_two_sorted_lists",
     srcs = ["lib.rs"],
     crate_root = "lib.rs",
     visibility = ["//visibility:private"],
@@ -10,10 +10,10 @@ rust_library(
 rust_binary(
     name = "run",
     srcs = ["main.rs"],
-    deps = [":two_sum"],
+    deps = [":merge_two_sorted_lists"],
 )
 
 rust_test(
     name = "test",
-    crate = ":two_sum",
+    crate = ":merge_two_sorted_lists",
 )

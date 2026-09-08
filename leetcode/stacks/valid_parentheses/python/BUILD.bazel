@@ -1,0 +1,23 @@
+load("@rules_python//python:py_library.bzl", "py_library")
+load("@rules_python//python:py_binary.bzl", "py_binary")
+load("@rules_python//python:py_test.bzl", "py_test")
+
+py_library(
+    name = "solution_lib",
+    srcs = ["solution.py"],
+    imports = ["."],
+)
+
+py_binary(
+    name = "run",
+    srcs = ["solution.py"],
+    main = "solution.py",
+    deps = [":solution_lib"],
+)
+
+py_test(
+    name = "test",
+    srcs = ["test_solution.py"],
+    main = "test_solution.py",
+    deps = [":solution_lib"],
+)

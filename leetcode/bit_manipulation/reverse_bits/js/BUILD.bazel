@@ -1,0 +1,14 @@
+load("@rules_shell//shell:sh_binary.bzl", "sh_binary")
+load("@rules_shell//shell:sh_test.bzl", "sh_test")
+
+sh_binary(
+    name = "run",
+    srcs = ["solution.js"],
+    visibility = ["//visibility:private"],
+)
+
+sh_test(
+    name = "test",
+    srcs = ["test_solution.sh"],
+    data = ["solution.js", "test_solution.js"],
+)
